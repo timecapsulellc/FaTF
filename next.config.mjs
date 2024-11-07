@@ -16,8 +16,7 @@ const nextConfig = {
     return config;
   },
   experimental: {
-    outputFileTracingRoot: process.env.NODE_ENV === "development" ? 
-      undefined : "/Users/web3/Downloads/FaTF/FatFrogKingdom"
+    outputFileTracingRoot: undefined
   },
   // Add assetPrefix for static files
   assetPrefix: process.env.NODE_ENV === 'production' ? '/_next' : ''
