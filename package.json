@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "cross-env PORT=3001 node build/standalone/server.js",
+    "start": "node build/standalone/server.js",
     "clean": "rm -rf .next build",
     "lint": "next lint"
   },
