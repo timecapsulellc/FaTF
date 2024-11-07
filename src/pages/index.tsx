@@ -29,7 +29,7 @@ export default function Home() {
                 community of NFT holders and start earning passive rewards today.
               </p>
             </div>
-            <VideoEmbed videoId="FatFrog_Kingdom_Anthem_The_Vision_Lives_On" />
+            <VideoEmbed videoId="dQw4w9WgXcQ" />
           </div>
 
           <div>

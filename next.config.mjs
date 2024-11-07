@@ -14,7 +14,13 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
-  }
+  },
+  experimental: {
+    outputFileTracingRoot: process.env.NODE_ENV === "development" ? 
+      undefined : "/Users/web3/Downloads/FaTF/FatFrogKingdom"
+  },
+  // Add assetPrefix for static files
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/_next' : ''
 };
 
 export default nextConfig;
