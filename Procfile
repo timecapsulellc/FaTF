@@ -1,1 +1,1 @@
-web: node build/standalone/server.js
+web: cd build/standalone && node server.js
