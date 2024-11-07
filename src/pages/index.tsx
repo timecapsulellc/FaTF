@@ -1,6 +1,5 @@
 import { StakingAnalytics } from '../../components/StakingAnalytics';
 import { UserProfile } from '../../components/UserProfile';
-import { VideoEmbed } from '../../components/VideoEmbed';
 import { Staking } from '../../components/Staking';
 import { ConnectWallet } from "@thirdweb-dev/react";
 
@@ -29,7 +28,6 @@ export default function Home() {
                 community of NFT holders and start earning passive rewards today.
               </p>
             </div>
-            <VideoEmbed videoId="dQw4w9WgXcQ" />
           </div>
 
           <div>
