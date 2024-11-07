@@ -1,23 +1,23 @@
-'use client';
+import type { Metadata } from 'next'
+import './globals.css'
 
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { Avalanche } from "@thirdweb-dev/chains";
+export const metadata: Metadata = {
+  title: 'Fat Frogs Kingdom',
+  description: 'NFT Staking Platform for Fat Frogs',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0 }}>
-        <ThirdwebProvider
-          activeChain={Avalanche}
-          clientId="149584c7b4535aef52db119d20cbd442"
-        >
+      <body>
+        <main className="min-h-screen bg-[#0f1318] text-white">
           {children}
-        </ThirdwebProvider>
+        </main>
       </body>
     </html>
-  );
+  )
 }

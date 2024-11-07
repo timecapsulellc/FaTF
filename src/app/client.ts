@@ -1,5 +1,9 @@
 import { createThirdwebClient } from "thirdweb";
 
+if (!process.env.NEXT_PUBLIC_CLIENT_ID) {
+  throw new Error("Missing NEXT_PUBLIC_CLIENT_ID environment variable");
+}
+
 export const client = createThirdwebClient({
-    clientId: "149584c7b4535aef52db119d20cbd442"
+  clientId: process.env.NEXT_PUBLIC_CLIENT_ID
 });
