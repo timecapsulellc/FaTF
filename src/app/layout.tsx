@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { chain } from './chain';
 
 export const metadata: Metadata = {
   title: 'Fat Frogs Kingdom',
@@ -14,9 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="min-h-screen bg-[#0f1318] text-white">
-          {children}
-        </main>
+        <ThirdwebProvider
+          activeChain={chain}
+          clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
+        >
+          <main className="min-h-screen bg-[#0f1318] text-white">
+            {children}
+          </main>
+        </ThirdwebProvider>
       </body>
     </html>
   )
