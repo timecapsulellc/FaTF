@@ -12,3 +12,8 @@ services:
   env:
     - key: NODE_ENV
       value: production
+    - key: PORT
+      value: "8080"
+  routes:
+    - path: /.*
+      preserve_path_prefix: true
