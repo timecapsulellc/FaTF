@@ -14,6 +14,9 @@ services:
       value: production
     - key: PORT
       value: "8080"
+    - key: NEXT_TELEMETRY_DISABLED
+      value: "1"
   routes:
     - path: /.*
       preserve_path_prefix: true
+  source_dir: /
