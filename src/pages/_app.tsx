@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { Avalanche } from "@thirdweb-dev/chains";
-import '../app/globals.css'
+import '../styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

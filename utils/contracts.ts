@@ -1,5 +1,5 @@
-import { chain } from "../src/app/chain";
-import { client } from "../src/app/client";
+import { chain } from "../src/utils/chain";
+import { client } from "../src/utils/client";
 import { getContract } from "thirdweb";
 import { stakingABI } from "./stakingABI";
 
