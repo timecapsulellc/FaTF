@@ -1,1 +1,1 @@
-web: cd build/standalone && node server.js
+web: npm start
