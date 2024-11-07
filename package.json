@@ -1,0 +1,32 @@
+{
+  "name": "erc721stakingtest",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve build -p $PORT",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "pino-pretty": "^11.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "@thirdweb-dev/react": "^4.4.8",
+    "@thirdweb-dev/sdk": "^4.0.38",
+    "thirdweb": "^5.12.0",
+    "ethers": "^5.7.2",
+    "serve": "^14.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
