@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { chain } from './chain';
+import { Avalanche } from "@thirdweb-dev/chains";
 
 export const metadata: Metadata = {
   title: 'Fat Frogs Kingdom',
@@ -17,8 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThirdwebProvider
-          activeChain={chain}
+          activeChain={Avalanche}
           clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
+          supportedChains={[Avalanche]}
         >
           <main className="min-h-screen bg-[#0f1318] text-white">
             {children}
