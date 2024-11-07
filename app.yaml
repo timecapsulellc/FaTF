@@ -1,21 +1,20 @@
-env: flex
-runtime: nodejs
-env_variables:
-  NODE_ENV: "production"
-  PORT: "8080"
-
-handlers:
-  - url: /.*
-    secure: always
-    redirect_http_response_code: 301
-    script: auto
-
-automatic_scaling:
-  target_cpu_utilization: 0.65
-  min_instances: 1
-  max_instances: 10
-
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
+name: fatfrogkingdom
+services:
+- name: web
+  github:
+    branch: main
+    deploy_on_push: true
+  build_command: npm install && npm run build
+  run_command: npm start
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  env:
+    - key: NODE_ENV
+      value: production
+    - key: PORT
+      value: "8080"
+  routes:
+    - path: /
+  health_check:
+    http_path: /api/health
