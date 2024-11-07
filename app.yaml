@@ -16,6 +16,14 @@ services:
       value: "8080"
     - key: NEXT_TELEMETRY_DISABLED
       value: "1"
+    - key: NEXT_PUBLIC_CLIENT_ID
+      value: "149584c7b4535aef52db119d20cbd442"
+    - key: NEXT_PUBLIC_NFT_CONTRACT_ADDRESS
+      value: "0xE4637e7425A2d19c4f7A23A36a1f5f844872e6c5"
+    - key: NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS
+      value: "0x6A39b9404606e82a70bFb281f36737C018C1335F"
+    - key: NEXT_PUBLIC_REWARD_TOKEN_CONTRACT_ADDRESS
+      value: "0xf9b864b6d7B2f6348f6adDE5557c676f14FB53e8"
   routes:
     - path: /.*
       preserve_path_prefix: true
