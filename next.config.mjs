@@ -14,6 +14,18 @@ const nextConfig = {
     config.externals = [...(config.externals || []), 'pino-pretty', 'lokijs', 'encoding'];
     return config;
   },
+  experimental: {
+    outputFileTracingRoot: undefined,
+    outputStandalone: true
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/:path*'
+      }
+    ];
+  },
   async headers() {
     return [
       {
@@ -21,10 +33,10 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-store',
-          },
-        ],
-      },
+            value: 'public, max-age=0, must-revalidate'
+          }
+        ]
+      }
     ];
   }
 };

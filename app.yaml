@@ -22,10 +22,19 @@ services:
       value: "0x6A39b9404606e82a70bFb281f36737C018C1335F"
     - key: NEXT_PUBLIC_REWARD_TOKEN_CONTRACT_ADDRESS
       value: "0xf9b864b6d7B2f6348f6adDE5557c676f14FB53e8"
+  http_port: 8080
+  health_check:
+    initial_delay_seconds: 10
+    period_seconds: 10
+    timeout_seconds: 5
+    success_threshold: 1
+    failure_threshold: 3
+    http_path: /
   routes:
-    - path: /_next
-      preserve_path_prefix: true
-    - path: /static
-      preserve_path_prefix: true
     - path: /.*
       preserve_path_prefix: true
+  static_sites:
+    - name: next-static
+      environment_slug: static
+      source_dir: build/standalone/.next/static
+      output_dir: _next/static
