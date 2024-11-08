@@ -16,7 +16,10 @@ const nextConfig = {
   },
   experimental: {
     outputFileTracingRoot: undefined,
-    outputStandalone: true
+    outputStandalone: true,
+    outputFileTracingIncludes: {
+      '/**/*': ['./public/**/*']
+    }
   },
   async rewrites() {
     return [
