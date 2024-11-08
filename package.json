@@ -10,8 +10,8 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "next": "14.0.3",
