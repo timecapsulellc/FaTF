@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "cd build/standalone && node server.js",
-    "clean": "rm -rf .next build",
+    "start": "next start -p ${PORT:-8080}",
     "lint": "next lint"
   },
   "engines": {

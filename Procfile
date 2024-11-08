@@ -1,1 +1,1 @@
-web: cd build/standalone && cp -r ../static .next/ && node server.js
+web: npm start
