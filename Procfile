@@ -1,1 +1,1 @@
-web: cd build/standalone && node server.js
+web: cd build/standalone && cp -r ../static .next/ && node server.js
