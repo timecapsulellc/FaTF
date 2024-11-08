@@ -5,7 +5,7 @@ services:
     branch: main
     deploy_on_push: true
   build_command: NEXT_PUBLIC_CLIENT_ID=149584c7b4535aef52db119d20cbd442 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0xE4637e7425A2d19c4f7A23A36a1f5f844872e6c5 NEXT_PUBLIC_STAKING_CONTRACT_ADDRESS=0x6A39b9404606e82a70bFb281f36737C018C1335F NEXT_PUBLIC_REWARD_TOKEN_CONTRACT_ADDRESS=0xf9b864b6d7B2f6348f6adDE5557c676f14FB53e8 npm install && npm run build
-  run_command: npm start
+  run_command: cd build/standalone && node server.js
   environment_slug: node-js
   instance_count: 1
   instance_size_slug: basic-xxs
@@ -29,4 +29,3 @@ services:
       preserve_path_prefix: true
     - path: /.*
       preserve_path_prefix: true
-  source_dir: /

@@ -4,7 +4,7 @@ const nextConfig = {
   distDir: 'build',
   reactStrictMode: true,
   swcMinify: true,
-  trailingSlash: true,
+  poweredByHeader: false,
   images: {
     domains: ['ipfs.thirdwebstorage.com'],
     unoptimized: true
@@ -13,6 +13,19 @@ const nextConfig = {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     config.externals = [...(config.externals || []), 'pino-pretty', 'lokijs', 'encoding'];
     return config;
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store',
+          },
+        ],
+      },
+    ];
   }
 };
 
