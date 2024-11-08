@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && mkdir -p build && cp -r .next/standalone/* build/ && cp -r .next/static build/static/ && cp -r public build/ && echo '{}' > build/package.json",
+    "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "clean": "rm -rf .next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf .next build node_modules"
   },
   "engines": {
     "node": "20.x",

@@ -4,7 +4,7 @@ services:
   github:
     branch: main
     deploy_on_push: true
-  build_command: rm -rf build && npm run build && mv build/* . && rm -rf build
+  build_command: npm run clean && npm install && npm run build
   run_command: node server.js
   environment_slug: node-js
   instance_count: 1
@@ -24,3 +24,10 @@ services:
       value: "0xf9b864b6d7B2f6348f6adDE5557c676f14FB53e8"
   http_port: 8080
   output_dir: .next/standalone
+  health_check:
+    http_path: /api/health
+    initial_delay_seconds: 10
+    period_seconds: 10
+    timeout_seconds: 5
+    success_threshold: 1
+    failure_threshold: 3

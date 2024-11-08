@@ -12,6 +12,19 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
+  },
+  onError: async (err, req, res) => {
+    console.error('App Error:', err);
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/:path*'
+      }
+    ]
   }
 };
 
