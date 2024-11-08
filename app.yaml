@@ -23,6 +23,10 @@ services:
     - key: NEXT_PUBLIC_REWARD_TOKEN_CONTRACT_ADDRESS
       value: "0xf9b864b6d7B2f6348f6adDE5557c676f14FB53e8"
   routes:
+    - path: /_next
+      preserve_path_prefix: true
+    - path: /static
+      preserve_path_prefix: true
     - path: /.*
       preserve_path_prefix: true
   source_dir: /

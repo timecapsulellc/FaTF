@@ -4,6 +4,7 @@ const nextConfig = {
   distDir: 'build',
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
   images: {
     domains: ['ipfs.thirdwebstorage.com'],
     unoptimized: true
