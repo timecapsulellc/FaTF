@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  distDir: 'build',
+  distDir: '.next',
   reactStrictMode: true,
+  basePath: '',
   images: {
     domains: ['ipfs.thirdwebstorage.com'],
     unoptimized: true
@@ -10,6 +11,16 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     return config;
+  },
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/:path*',
+          destination: '/_next/:path*',
+        },
+      ],
+    }
   }
 };
 
