@@ -2,6 +2,9 @@
 const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  experimental: {
+    outputStandalone: true
+  },
   images: {
     domains: ['ipfs.thirdwebstorage.com'],
     unoptimized: true
